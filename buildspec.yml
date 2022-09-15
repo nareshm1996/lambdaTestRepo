@@ -1,0 +1,20 @@
+version: 0.2
+phases:
+  install:
+    runtime-version:
+      python: 3.8
+    commands: 
+      - echo "Added Runtime version"
+  build:
+    commands:
+      - echo "Zipping packages"
+      - cd lib
+      - zip -r9 ../deployment_package.zip .
+      - cd ..
+      - zip -g deployment_package.zip lambda_function.py
+  post_build:
+    commands:
+      - echo "Updating lambda functions"
+      - aws lambda update-function-code --function-name lambdaDemofromGitHub --zip-file fileb://deployment_package.zip
+      - echo "Done"
+           
