@@ -19,4 +19,4 @@ jobs:
       - name: deploy
         run:
           #zip lambda_function.zip lambda_function.py
-          aws lambda update-function-code --functionname=shutdownCodeEC2 --zip-file=fileb://lambda_function.zip
+          aws lambda update-function-code --function-name=shutdownCodeEC2 --zip-file=fileb://lambda_function.zip
