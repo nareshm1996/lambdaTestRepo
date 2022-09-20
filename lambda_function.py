@@ -18,5 +18,7 @@ def lambda_handler(event, context):
     print('stopped your instances: ' + str(instances))
 
 
-regions = available_regions("ec2")
-print(f"List of regions in EC2: {regions}")    
+# regions = available_regions("ec2")
+# print(f"List of regions in EC2: {regions}")    
+
+print("Hello da mapla")
